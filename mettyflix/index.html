@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Mettyflix</title>
+		<!-- Link para o CSS do Font Awesome -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+		/>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<!-- Indicador de carregamento -->
+		<div class="loading-overlay">
+			<div class="loading">Carregando...</div>
+		</div>
+
+		<header>
+			<div class="logo">
+				<h1 class="logo__title">MettyFlix</h1>
+			</div>
+			<div class="profile">
+				<img src="https://avatar.iran.liara.run/public" alt="Perfil" />
+				<div class="dropdown-container">
+					<div class="dropdown">
+						<span>Perfil</span>
+						<span>Sair</span>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="content">
+			<div class="featured">
+				<h2>Título</h2>
+				<div class="featured__buttons">
+					<button class="button__play">
+						<i class="fas fa-play"></i> Reproduzir
+					</button>
+					<button>Minha Lista</button>
+				</div>
+				<div class="featured__description">
+					Descrição do filme ou série em destaque
+				</div>
+			</div>
+			<div class="netflixOriginals">
+				<div class="original__header">
+					<h2>ORIGINAIS NETFLIX</h2>
+				</div>
+				<div class="original__movies"></div>
+			</div>
+			<div class="movies">
+				<div class="movies__header">
+					<h2>Em Tendência</h2>
+				</div>
+				<div id="trending" class="movies__container"></div>
+				<div class="movies__header">
+					<h2>Mais Bem Avaliados</h2>
+				</div>
+				<div id="top_rated" class="movies__container"></div>
+			</div>
+		</main>
+
+		<script src="main.js"></script>
+	</body>
+</html>

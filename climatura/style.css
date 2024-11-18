@@ -1,0 +1,378 @@
+/* Reset básico para evitar margens e paddings inesperados */
+* {
+	font-family: Avenir Next, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f0f0f0;
+	min-height: 100vh;
+	margin: 0;
+}
+
+/* Container principal */
+#app {
+	background-color: white;
+	text-align: center;
+	width: 100%;
+	overflow-x: hidden;
+}
+
+#weather-container {
+	margin-top: 20px;
+}
+
+/* Layout principal */
+.wrapper {
+	display: flex;
+	min-height: 100vh;
+	z-index: 0;
+	width: 100%;
+}
+
+/* Área de previsão (clima atual e previsão) */
+.left {
+	background-color: #4f5d85;
+	width: 65%;
+	color: #091f39;
+	font-weight: 600;
+	padding: 1.6rem 2.4rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.date {
+	font-size: 1.6rem;
+}
+
+/* Barra de pesquisa */
+.searchBar {
+	background-color: #eef3f3;
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	padding: 0.8rem 1.2rem;
+	margin-top: 10px;
+}
+
+.searchInput {
+	background: none;
+	outline: none;
+	border: none;
+	flex: 1;
+	margin-left: 0.6rem;
+}
+
+.searchButton {
+	border: none;
+	background-color: #a8b7e2;
+	padding: 0.4rem 0.8rem;
+	border-radius: 0.5rem;
+	margin: -0.4rem 0;
+	cursor: pointer;
+}
+
+.searchButton:hover {
+	background-color: #8e9dd3;
+}
+
+/* Exibição das previsões do clima */
+.forecast-container {
+	display: flex;
+}
+
+.forecast-day {
+	background-color: #eef3f3;
+	padding: 10px;
+	border-radius: 8px;
+	width: 20%;
+	text-align: center;
+	margin: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-day p {
+	font-size: 1rem;
+}
+
+/* Previsão detalhada */
+.sectionTitle {
+	font-size: 1.2rem;
+	font-weight: 500;
+	margin-top: 3rem;
+	margin-bottom: 1.6rem;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+/* Informações principais do clima */
+.currentWeather {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+
+.weatherIconContainer {
+	height: 60px;
+	width: 60px;
+	margin-right: 1rem;
+}
+
+.weatherIconContainer img {
+	width: 100%;
+	height: 100%;
+}
+
+.currentTemperature {
+	font-size: 3rem;
+	font-weight: 500;
+}
+
+.currentTemperatureMetric {
+	font-size: 1.4rem;
+}
+
+.temperatureDescription {
+	font-size: 1.2rem;
+	font-weight: 400;
+}
+
+/* Lado direito (informações adicionais, como sol, tempo, etc.) */
+.right {
+	width: 35%;
+	background-color: #112b50;
+	color: #fafcfe;
+	padding: 2rem 1.4rem;
+	z-index: 1;
+}
+
+.rightContainer {
+	padding: 1.6rem;
+}
+
+.top {
+	display: flex;
+	justify-content: space-between;
+}
+
+.location {
+	font-size: 1.8rem;
+	font-weight: 500;
+}
+
+.time {
+	font-size: 1.4rem;
+	font-weight: 400;
+}
+
+.sunStageContainer {
+	display: flex;
+	align-items: center;
+	margin-top: 2rem;
+	background-color: #294269;
+	padding: 1rem 1.2rem;
+	border-radius: 0.6rem;
+	border: 1px #6180b9 solid;
+}
+
+.sunIcon {
+	display: flex;
+	justify-content: center;
+}
+
+.sunStageTitle {
+	color: #98989b;
+	font-weight: 400;
+	font-size: 0.8rem;
+}
+
+.sunWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+.sunTime {
+	font-weight: 500;
+}
+
+.sunTimeRelative {
+	font-size: 0.8rem;
+	font-weight: 400;
+}
+
+/* Estilo de linha horizontal */
+.horizontalLine {
+	width: 100%;
+	height: 1px;
+	background-color: #445977;
+	margin: 1.6rem 0;
+}
+
+/* Estilos responsivos */
+
+/* Para telas grandes (Desktop 1920x1080) */
+@media (min-width: 1366px) {
+	.wrapper {
+		flex-direction: row;
+	}
+
+	.left {
+		width: 65%;
+		padding: 2rem 3rem;
+	}
+
+	.right {
+		width: 35%;
+		padding: 2rem 2.4rem;
+	}
+
+	.forecast-day {
+		width: 20%;
+	}
+}
+
+/* Para telas médias (Desktop 1366x768) */
+@media (max-width: 1359px) and (min-width: 1024px) {
+	.wrapper {
+		flex-direction: row;
+	}
+
+	.left {
+		width: 60%;
+		padding: 1.6rem 2rem;
+	}
+
+	.right {
+		width: 40%;
+	}
+
+	.forecast-day {
+		width: 22%;
+	}
+}
+
+/* Para tablets (600px a 1024px) */
+@media (max-width: 1024px) and (min-width: 600px) {
+	.wrapper {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.left,
+	.right {
+		width: 100%;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+
+	.rightContainer {
+		width: 100%;
+		margin: 0 auto;
+		padding: 1rem;
+	}
+
+	.searchBar {
+		width: 100%;
+		max-width: 90%;
+		margin: 10px auto;
+	}
+
+	.forecast-container {
+		width: 100%;
+		max-width: 95%;
+		margin: 0 auto;
+		display: flex;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 10px;
+	}
+
+	.forecast-day {
+		width: 45%;
+		flex-shrink: 0;
+		margin: 5px;
+	}
+
+	.currentTemperature {
+		font-size: 2.5rem;
+	}
+
+	.currentTemperatureMetric {
+		font-size: 1.2rem;
+	}
+
+	.sunStageContainer {
+		flex-direction: column;
+		text-align: center;
+	}
+}
+
+/* Para celulares (menor que 600px) */
+@media (max-width: 599px) {
+	.wrapper {
+		flex-direction: column;
+		width: 100%;
+	}
+
+	.left,
+	.right {
+		width: 100%;
+		padding: 1rem;
+		box-sizing: border-box;
+	}
+
+	.rightContainer {
+		width: 100%;
+		padding: 0.5rem;
+	}
+
+	.searchBar {
+		width: 100%;
+		max-width: 90%;
+		margin: 10px auto;
+	}
+
+	.forecast-container {
+		width: 100%;
+		max-width: 95%;
+		margin: 0 auto;
+		display: flex;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 10px;
+	}
+
+	.forecast-day {
+		min-width: 48%;
+		flex-shrink: 0;
+		margin: 5px;
+	}
+
+	.currentTemperature {
+		font-size: 2rem;
+	}
+
+	.currentTemperatureMetric {
+		font-size: 1.1rem;
+	}
+
+	.sunStageContainer {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.location {
+		font-size: 1.5rem;
+	}
+
+	.time {
+		font-size: 1.2rem;
+	}
+}

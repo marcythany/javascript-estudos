@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+	/* Cores principais */
+	--background-dark: #111;
+	--background-light: #242424;
+	--highlight-color: rgba(255, 255, 255, 0.87);
+	--scrollbar-color: rgba(255, 255, 255, 0.5);
+	--dark-overlay: rgba(0, 0, 0, 0.3);
+	--button-bg: rgba(109, 109, 110, 0.7);
+	--button-hover-bg: white;
+	--button-hover-color: black;
+
+	/* Fonte principal */
+	--font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-family-alt: Inter, system-ui, Avenir, sans-serif;
+}
+
+/* Reset de estilo e font-family padrão */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: var(--background-dark);
+	color: white;
+	font-family: var(--font-family);
+	line-height: 1.5;
+}
+
+/* Flex containers for scrolling lists */
+.movies__container,
+.original__movies {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	gap: 20px;
+	padding-left: 10px;
+	width: 100%;
+	scroll-behavior: smooth; /* Add smooth scrolling for better UX */
+}
+
+.movies__container::-webkit-scrollbar,
+.original__movies::-webkit-scrollbar {
+	height: 8px;
+}
+
+.movies__container::-webkit-scrollbar-thumb,
+.original__movies::-webkit-scrollbar-thumb {
+	background: var(--scrollbar-color);
+	border-radius: 4px;
+}
+
+/* Estilo de cada imagem de cartaz */
+.movie-poster {
+	z-index: 0;
+	width: 200px;
+	height: 300px;
+	object-fit: cover;
+	border-radius: 8px;
+	transition: transform 0.2s ease-out;
+	cursor: pointer;
+}
+
+.movie-poster-container:hover {
+	transform: scale(1.1);
+}
+
+/* Estilos de texto no cartaz */
+.movie-poster-container {
+	width: 200px;
+	height: 300px;
+	margin: 20px 0;
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+}
+
+.movie-title {
+	position: absolute;
+	z-index: 1;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.6); /* Fundo semitransparente */
+	color: white;
+	font-size: 14px;
+	padding: 10px;
+	text-align: center;
+	border-radius: 0 0 8px 8px; /* Bordas arredondadas na parte inferior */
+	box-sizing: border-box; /* Garante que o padding não ultrapasse a largura */
+}
+
+/* Estilos do cabeçalho */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 15px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 100;
+}
+
+.logo {
+	width: 120px;
+}
+
+.logo__title {
+	font-family: 'Kanit', sans-serif;
+	font-size: 36px;
+	font-weight: bold;
+	color: #ff0000;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+	letter-spacing: 1px;
+	transition: transform 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.profile {
+	position: relative;
+}
+
+.profile img {
+	width: 40px;
+	border-radius: 50%;
+}
+
+/* Estilos para filmes em destaque */
+.featured {
+	height: 400px;
+	position: relative;
+	background-size: cover;
+	background-position: center;
+	padding-left: 30px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: white;
+}
+
+.featured::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 7.4rem;
+	background-image: linear-gradient(
+		180deg,
+		transparent,
+		rgba(37, 37, 37, 0.61),
+		var(--background-dark)
+	);
+}
+
+.featured h2 {
+	font-size: 50px;
+	margin: 0;
+	z-index: 10;
+}
+
+.featured__buttons {
+	z-index: 10;
+}
+
+.featured__buttons button {
+	font-size: 16px;
+	color: white;
+	background-color: var(--button-bg);
+	border: none;
+	padding: 8px 24px;
+	border-radius: 4px;
+}
+
+.featured__buttons button:hover {
+	background-color: var(--button-hover-bg);
+	color: var(--button-hover-color);
+}
+
+/* Descrição do filme destacado */
+.featured__description {
+	max-width: 350px;
+	font-weight: 400;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+	z-index: 10;
+}
+
+/* Estilos para a modal */
+.modal-body iframe {
+	width: 100%;
+}
+
+.modal-body span {
+	color: #333;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 60px;
+}
+
+/* Loading overlay */
+.loading-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgb(19, 19, 19);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.loading {
+	font-size: 24px;
+	color: white;
+}
+
+/* Dropdowns de navegação */
+.dropdown-container {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	padding-top: 3px;
+	display: none;
+}
+
+.dropdown {
+	background-color: black;
+	padding: 8px;
+	border-radius: 4px;
+	width: 100px;
+}
+
+.dropdown span {
+	cursor: pointer;
+}
+
+.profile:hover .dropdown-container {
+	display: block;
+}

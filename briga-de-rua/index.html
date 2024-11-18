@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Briga de Rua</title>
+		<link href="style.css" rel="stylesheet" type="text/css" />
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>Briga de Rua</h1>
+			<div class="menu">
+				<div class="p1Info">
+					<div id="p1Name">Jogador 1</div>
+					<img
+						id="p1"
+						src="https://i.gifer.com/origin/00/0019f6845ceaa9347b881ccbe8f5644a_w200.gif"
+						alt="Jogador 1"
+					/>
+
+					<div class="playerControls">
+						<div class="AttackDiv">
+							<button id="p1AttackButton">Ataque</button>
+						</div>
+
+						<div class="HealDiv">
+							<button id="p1HealButton">Saúde</button>
+						</div>
+					</div>
+
+					<div id="p1HealthBar" class="health-bar">
+						<div id="p1Health" class="health">100</div>
+					</div>
+				</div>
+
+				<div class="center">
+					<button id="play">Lutar</button>
+				</div>
+
+				<div class="p2Info">
+					<div id="p2Name">Jogador 2</div>
+					<img
+						id="p2"
+						src="https://static.wikia.nocookie.net/streetfighter/images/9/9d/Akuma-ts-stance.gif"
+						alt="Jogador 2"
+					/>
+
+					<div class="playerControls">
+						<div class="AttackDiv">
+							<button id="p2AttackButton">Ataque</button>
+						</div>
+
+						<div class="HealDiv">
+							<button id="p2HealButton">Saúde</button>
+						</div>
+					</div>
+
+					<div id="p2HealthBar" class="health-bar">
+						<div id="p2Health" class="health">100</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="resultContainer">
+				<div id="result"></div>
+				<button id="reset">Resetar</button>
+			</div>
+		</div>
+
+		<!-- Sons -->
+		<audio id="p1attack" controls style="display: none">
+			<source src="sounds/fastpunch.mp3" type="audio/mpeg" />
+		</audio>
+		<audio id="p1heal" controls style="display: none">
+			<source src="sounds/fastheal.mp3" type="audio/mpeg" />
+		</audio>
+		<audio id="p2attack" controls style="display: none">
+			<source src="sounds/quickhit.mp3" type="audio/mpeg" />
+		</audio>
+		<audio id="p2heal" controls style="display: none">
+			<source src="sounds/quickheal.mp3" type="audio/mpeg" />
+		</audio>
+		<audio id="victory" controls style="display: none">
+			<source src="sounds/victory.mp3" type="audio/mpeg" />
+		</audio>
+		<script type="module" src="/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Previsão do Tempo</title>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<div id="app">
+			<div class="wrapper">
+				<!-- Área de informações sobre o clima atual e previsões -->
+				<div class="left">
+					<!-- Header com data e barra de pesquisa -->
+					<div class="header">
+						<div class="date" id="current-date"></div>
+						<!-- Barra de Pesquisa -->
+						<div class="searchBar">
+							<input
+								type="text"
+								id="city-input"
+								class="searchInput"
+								placeholder="Digite uma cidade..."
+							/>
+							<button id="search-button" class="searchButton">Buscar</button>
+						</div>
+					</div>
+
+					<!-- Clima Atual -->
+					<div id="current-weather" class="container">
+						<h2 class="sectionTitle">Clima Atual</h2>
+						<div class="currentWeather">
+							<div class="weatherIconContainer">
+								<img src="" alt="Ícone do Clima" id="weather-icon" />
+							</div>
+							<div class="currentTemperatureValueContainer">
+								<div class="currentTemperature">
+									<span
+										id="current-temperature"
+										class="currentTemperatureValue"
+									></span>
+									<span class="currentTemperatureMetric">°C</span>
+								</div>
+								<div
+									id="current-description"
+									class="temperatureDescription"
+								></div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Previsão para os Próximos 5 Dias -->
+					<div id="forecast" class="container">
+						<h2 class="sectionTitle">Previsão para os Próximos 5 Dias</h2>
+						<div id="forecast-container" class="forecast-container">
+							<!-- Aqui serão inseridos os cards de previsão -->
+						</div>
+					</div>
+				</div>
+
+				<!-- Área com informações adicionais (como nascer e pôr do sol) -->
+				<div class="right">
+					<div class="rightContainer">
+						<!-- Localização e hora atual -->
+						<div class="top">
+							<div class="location" id="current-location"></div>
+							<div class="time" id="current-time"></div>
+						</div>
+
+						<div class="horizontalLine"></div>
+
+						<!-- Detalhes sobre o nascer e pôr do sol -->
+						<div class="sunStageContainer">
+							<div class="sunWrapper">
+								<div class="sunIcon">
+									<img
+										src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDM2IDM2Ij4KCTxwYXRoIGZpbGw9IiNmZmFjMzMiIGQ9Ik0xNiAyczAtMiAyLTJzMiAyIDIgMnYyczAgMi0yIDJzLTItMi0yLTJ6bTE4IDE0czIgMCAyIDJzLTIgMi0yIDJoLTJzLTIgMC0yLTJzMi0yIDItMnpNNCAxNnMyIDAgMiAycy0yIDItMiAySDJzLTIgMC0yLTJzMi0yIDItMnptNS4xMjEtOC43MDdzMS40MTQgMS40MTQgMCAyLjgyOHMtMi44MjggMC0yLjgyOCAwTDQuODc4IDguNzA4cy0xLjQxNC0xLjQxNCAwLTIuODI5YzEuNDE1LTEuNDE0IDIuODI5IDAgMi44MjkgMHptMjEgMjFzMS40MTQgMS40MTQgMCAyLjgyOHMtMi44MjggMC0yLjgyOCAwbC0xLjQxNC0xLjQxNHMtMS40MTQtMS40MTQgMC0yLjgyOHMyLjgyOCAwIDIuODI4IDB6bS0uNDEzLTE4LjE3MnMtMS40MTQgMS40MTQtMi44MjggMHMwLTIuODI4IDAtMi44MjhsMS40MTQtMS40MTRzMS40MTQtMS40MTQgMi44MjggMHMwIDIuODI4IDAgMi44Mjh6bS0yMSAyMXMtMS40MTQgMS40MTQtMi44MjggMHMwLTIuODI4IDAtMi44MjhsMS40MTQtMS40MTRzMS40MTQtMS40MTQgMi44MjggMHMwIDIuODI4IDAgMi44Mjh6TTE2IDMyczAtMiAyLTJzMiAyIDIgMnYyczAgMi0yIDJzLTItMi0yLTJ6IiAvPgoJPGNpcmNsZSBjeD0iMTgiIGN5PSIxOCIgcj0iMTAiIGZpbGw9IiNmZmFjMzMiIC8+Cjwvc3ZnPg=="
+										alt="Ícone do Sol"
+									/>
+								</div>
+
+								<div class="col">
+									<div class="sunStageTitle">Nascer do Sol</div>
+									<div class="sunTime" id="sunrise-time"></div>
+									<div class="sunTimeRelative" id="sunrise-relative-time"></div>
+								</div>
+							</div>
+							<div class="sunWrapper">
+								<div class="sunIcon">
+									<img
+										src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDUxMiA1MTIiPgoJPGRlZnM+CgkJPGxpbmVhckdyYWRpZW50IGlkPSJtZXRlb2NvbnNTdW5zZXRGaWxsMCIgeDE9IjE1MCIgeDI9IjIzNCIgeTE9IjExOS4yIiB5Mj0iMjY0LjgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KCQkJPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmJiZjI0IiAvPgoJCQk8c3RvcCBvZmZzZXQ9Ii41IiBzdG9wLWNvbG9yPSIjZmJiZjI0IiAvPgoJCQk8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmNTllMGIiIC8+CgkJPC9saW5lYXJHcmFkaWVudD4KCQk8Y2xpcFBhdGggaWQ9Im1ldGVvY29uc1N1bnNldEZpbGwxIj4KCQkJPHBhdGggZmlsbD0ibm9uZSIgZD0iTTUxMiAzMDZIMjk2YTIxLjUgMjEuNSAwIDAgMC0xNCA1LjNMMjU2IDMzNGwtMjYtMjIuN2EyMS41IDIxLjUgMCAwIDAtMTQtNS4zSDBWMGg1MTJaIiAvPgoJCTwvY2xpcFBhdGg+CgkJPHN5bWJvbCBpZD0ibWV0ZW9jb25zU3Vuc2V0RmlsbDIiIHZpZXdCb3g9IjAgMCAzODQgMzg0Ij4KCQkJPGNpcmNsZSBjeD0iMTkyIiBjeT0iMTkyIiByPSI4NCIgZmlsbD0idXJsKCNtZXRlb2NvbnNTdW5zZXRGaWxsMCkiIHN0cm9rZT0iI2Y4YWYxOCIgc3Ryb2tlLW1pdGVybGltaXQ9IjEwIiBzdHJva2Utd2lkdGg9IjYiIC8+CgkJCTxwYXRoIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZiYmYyNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbWl0ZXJsaW1pdD0iMTAiIHN0cm9rZS13aWR0aD0iMjQiIGQ9Ik0xOTIgNjEuN1YxMm0wIDM2MHYtNDkuN205Mi4yLTIyMi41bDM1LTM1TTY0LjggMzE5LjJsMzUuMS0zNS4xbTAtMTg0LjRsLTM1LTM1bTI1NC41IDI1NC41bC0zNS4xLTM1LjFNNjEuNyAxOTJIMTJtMzYwIDBoLTQ5LjciIHRyYW5zZm9ybT0icm90YXRlKDQ1IDE5MiAxOTIpIiAvPgoJCTwvc3ltYm9sPgoJPC9kZWZzPgoJPGcgY2xpcC1wYXRoPSJ1cmwoI21ldGVvY29uc1N1bnNldEZpbGwxKSI+CgkJPHVzZSB3aWR0aD0iMzg0IiBoZWlnaHQ9IjM4NCIgaHJlZj0iI21ldGVvY29uc1N1bnNldEZpbGwyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2NCAxMDApIiAvPgoJPC9nPgoJPHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzc0MTUxIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS13aWR0aD0iMTgiIGQ9Ik0xMjggMzMyaDg4bDQwIDM2bDQwLTM2aDg4IiAvPgo8L3N2Zz4="
+										alt="Ícone do Sol"
+									/>
+								</div>
+								<div class="col">
+									<div class="sunStageTitle">Pôr do Sol</div>
+									<div class="sunTime" id="sunset-time"></div>
+									<div class="sunTimeRelative" id="sunset-relative-time"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Área de mensagens de erro -->
+			<div id="error-message"></div>
+		</div>
+
+		<script type="module" src="./main.js"></script>
+	</body>
+</html>
