@@ -1,0 +1,142 @@
+:root {
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
+
+	color-scheme: light dark;
+	color: rgba(34, 34, 34, 0.87);
+	background-color: #242424;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--green: #5ed68a;
+	--red: #1ea6c8;
+	--background: #e48a8a;
+	--gradient-1: #343e63;
+	--gradient-2: #2a3352;
+}
+
+html {
+	font-size: 12px;
+	font-weight: 300;
+}
+
+body {
+	display: flex;
+	place-items: center;
+	justify-content: center;
+	width: 100vw;
+	height: 100vh;
+	margin: 0 auto;
+	background: radial-gradient(var(--gradient1), var(--gradient2));
+	align-items: center;
+}
+
+main {
+	text-align: center;
+	background: var(--background);
+	border: solid var(--red);
+	border-width: 8px;
+	border-radius: 2rem;
+	padding: 2rem;
+	max-height: 55rem;
+	max-width: 60rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+#welcomeScreen,
+#gameArea {
+	display: flex;
+	flex-direction: column;
+	max-height: 100%;
+}
+
+h2 {
+	font-size: 3.2rem;
+}
+
+h3 {
+	font-size: 2rem;
+}
+
+input {
+	border: 2px solid lightgray;
+	background: transparent;
+	margin: 1rem 0;
+	padding: 0.5rem 0;
+	width: 20rem;
+	text-align: center;
+	font-size: 1.6rem;
+}
+
+.stats {
+	text-align: left;
+	width: 100%;
+}
+
+.info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.info span {
+	font-size: 1.6rem;
+}
+
+#attempts {
+	margin-left: 5px;
+}
+
+.button-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+	background: var(--green);
+	padding: 2rem 6rem;
+	border-radius: 1rem 1rem 0 0;
+	font-size: 1.4rem;
+}
+
+button:last-child {
+	background: var(--red);
+	border-radius: 0 0 1rem 1rem;
+}
+
+/* game screen */
+
+h3 {
+	font-size: 2rem;
+}
+
+p {
+	font-weight: bold;
+}
+
+#newGameButton {
+	border-radius: 0;
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color: #213547;
+		background-color: #ffffff;
+	}
+	a:hover {
+		color: #747bff;
+	}
+	button {
+		background-color: #f9f9f9;
+	}
+}

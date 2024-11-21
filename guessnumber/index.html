@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Adivinhe o Número</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body onload="init()">
+		<main>
+			<div id="welcomeScreen">
+				<h2>
+					Adivinhe um número<br />
+					de <br />1 - 100
+				</h2>
+			</div>
+			<div id="gameArea">
+				<section>
+					<h3 id="textOutput">Seu palpite:</h3>
+					<input
+						type="number"
+						id="inputBox"
+						min="1"
+						max="100"
+						onchange="compareNumbers()"
+					/>
+				</section>
+				<section class="stats">
+					<div class="info">
+						<p>NÚMERO DE TENTATIVAS:</p>
+						<span id="attempts">0</span>
+					</div>
+					<div class="info">
+						<p>SEUS PALPITES:</p>
+						<span id="guesses">0</span>
+					</div>
+				</section>
+				<button id="newGameButton" onclick="newGame()">NOVO JOGO</button>
+			</div>
+		</main>
+		<script src="/main.js"></script>
+	</body>
+</html>
