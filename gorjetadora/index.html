@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/vite.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Gorjetadora</title>
+	</head>
+	<body>
+		<main>
+			<h1>Gorjetadora</h1>
+			<section>
+				<div class="bill">
+					<label for="yourBill">Conta: </label>
+					<input type="number" placeholder="Valor da conta" id="yourBill" />
+				</div>
+				<div>
+					<div class="space-between">
+						<label for="">Selecione a gorjeta</label>
+						<span id="tipPercent">0%</span>
+					</div>
+					<input type="range" value="0" id="tipInput" class="range" />
+				</div>
+				<div class="space-between">
+					<span>Gorjeta</span> <span id="tipValue"></span>
+				</div>
+				<hr />
+				<div class="space-between total">
+					<span>Total</span> <span id="totalWithTip"></span>
+				</div>
+			</section>
+			<section>
+				<div>
+					<div class="space-between">
+						<label for="splitInput">Dividir por:</label>
+						<span id="splitValue">1 Pessoa</span>
+					</div>
+					<input
+						type="range"
+						min="1"
+						max="10"
+						value="1"
+						id="splitInput"
+						class="range"
+					/>
+				</div>
+				<div id="bill-each-wrapper" class="space-between">
+					<span>Cobrar de cada um</span> <span id="billEach"></span>
+				</div>
+			</section>
+		</main>
+		<script type="module" src="/main.js" defer></script>
+	</body>
+</html>
