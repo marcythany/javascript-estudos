@@ -1,13 +1,38 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Simple Calculator using Javascript</title>
+		<link href="style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="wrapper">
+			<h2>Simple Calculator</h2>
+			<div class="numbers-input">
+				<input id="num-one" name="num-one" type="text" />
+				<input id="num-two" name="num-two" type="text" /><br />
+			</div>
+			<br />
+			<div class="numbers-radio">
+				<input checked id="box1" name="sign-area" type="radio" value="add" /><b
+					>+</b
+				>
+				<input id="box2" name="sign-area" type="radio" value="subtract" /><b
+					>-</b
+				>
+				<input id="box3" name="sign-area" type="radio" value="multiply" /><b
+					>*</b
+				>
+				<input id="box4" name="sign-area" type="radio" value="divide" /><b>/</b>
+			</div>
+			<br />
+			<br />
+			<div class="btn-wrapper">
+				<button onclick="outcome()" type="button">calculate</button>
+				<button onclick="reset()" type="button">clear</button>
+			</div>
+			<h1 id="resultArea"></h1>
+		</div>
+		<script src="main.js"></script>
+	</body>
 </html>
