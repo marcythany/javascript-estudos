@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap');
+:root {
+	--primary-color: rgb(17, 86, 102);
+	--primary-color-darker: rgb(9, 48, 56);
+}
+
+* {
+	box-sizing: border-box;
+	outline: 0;
+	margin: 0;
+	padding: 0;
+}
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	line-height: 1.5;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	background: var(--primary-color);
+}
+
+h1 {
+	font-size: 2em;
+	font-weight: 700;
+	color: var(--primary-color-darker);
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: 700;
+	color: var(--primary-color-darker);
+	margin-bottom: 10px;
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	max-width: 640px;
+	background: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+.tabela-involucro {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.tabela-esquerda,
+.tabela-direita {
+	display: flex;
+	flex-direction: column;
+}
+.tabela-direita {
+	align-items: flex-end;
+}
+
+.tabela-esquerda table,
+.tabela-direita table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tabela-esquerda th,
+
+/* Formulário de input e botões */
+form input,
+form label,
+form button {
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+form input {
+	font-size: 24px;
+	height: 50px;
+	padding: 0 20px;
+}
+
+form input:focus {
+	outline: 1px solid var(--primary-color);
+}
+
+form button {
+	border: none;
+	background: var(--primary-color);
+	color: #fff;
+	font-size: 18px;
+	font-weight: 700;
+	height: 50px;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+form button:hover {
+	background: var(--primary-color-darker);
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Modelo</title>
+		<link rel="stylesheet" href="/aula44/assets/css/style.css" />
+	</head>
+
+	<body>
+		<section class="container">
+			<h1>Calculadora de IMC</h1>
+			<div class="tabela-involucro">
+				<div class="tabela-esquerda">
+					<h2>IMC</h2>
+					<p>menos do que 18,5</p>
+					<p>entre 18,5 e 24,9</p>
+					<p>entre 25 e 29,9</p>
+					<p>entre 30 e 34,9</p>
+					<p>entre 35 e 39,9</p>
+					<p>mais do que 40</p>
+				</div>
+				<div class="tabela-direita">
+					<h2>Resultado</h2>
+					<p>Abaixo do peso</p>
+					<p>Peso ideal</p>
+					<p>Sobrepeso</p>
+					<p>Obesidade grau 1</p>
+					<p>Obesidade grau 2</p>
+					<p>Obesidade grau 3</p>
+				</div>
+			</div>
+			<h1>Calcule seu IMC</h1>
+			<form class="form">
+				<input type="text" name="peso" placeholder="Peso" class="peso" />
+				<input type="text" name="altura" placeholder="Altura" class="altura" />
+				<button type="submit" onclick="calcularIMC()">Calcular</button>
+			</form>
+			<p class="resultado"></p>
+		</section>
+
+		<script src="/aula44/assets/js/main.js"></script>
+	</body>
+</html>
