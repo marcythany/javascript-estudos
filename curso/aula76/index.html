@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculadora</title>
+		<link rel="stylesheet" href="/aula76/assets/css/style.css" />
+	</head>
+
+	<body>
+		<!-- Conteúdo principal da página -->
+		<main class="container">
+			<!-- Cabeçalho com o título da calculadora -->
+			<header>
+				<h1>Calculadora</h1>
+			</header>
+
+			<!-- Formulário da calculadora -->
+			<form class="calculadora" aria-label="Calculadora">
+				<!-- Campo de entrada da calculadora -->
+				<fieldset>
+					<!-- Tela de exibição do resultado -->
+					<div class="tela-wrapper">
+						<label for="tela" class="visually-hidden"
+							>Tela da calculadora</label
+						>
+						<input
+							type="text"
+							id="tela"
+							class="tela"
+							aria-label="Resultado da calculadora"
+						/>
+					</div>
+
+					<!-- Botões da calculadora -->
+					<div class="botoes">
+						<button type="button" class="btn btn-clear" aria-label="Limpar">
+							C
+						</button>
+						<button
+							type="button"
+							class="btn btn-paren"
+							aria-label="Abrir parênteses"
+						>
+							(
+						</button>
+						<button
+							type="button"
+							class="btn btn-paren"
+							aria-label="Fechar parênteses"
+						>
+							)
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Dividir">
+							/
+						</button>
+
+						<button type="button" class="btn btn-num" aria-label="Número 7">
+							7
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 8">
+							8
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 9">
+							9
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Multiplicar">
+							*
+						</button>
+
+						<button type="button" class="btn btn-num" aria-label="Número 4">
+							4
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 5">
+							5
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 6">
+							6
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Adicionar">
+							+
+						</button>
+
+						<button type="button" class="btn btn-num" aria-label="Número 1">
+							1
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 2">
+							2
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 3">
+							3
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Subtrair">
+							-
+						</button>
+
+						<button
+							type="button"
+							class="btn btn-num"
+							aria-label="Ponto decimal"
+						>
+							.
+						</button>
+						<button type="button" class="btn btn-num" aria-label="Número 0">
+							0
+						</button>
+						<button type="button" class="btn btn-del" aria-label="Apagar">
+							&laquo;
+						</button>
+						<button type="button" class="btn btn-eq" aria-label="Igual a">
+							=
+						</button>
+					</div>
+				</fieldset>
+			</form>
+		</main>
+
+		<script src="/aula76/assets/js/main.js"></script>
+	</body>
+</html>
