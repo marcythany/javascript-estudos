@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="Página de cadastro para usuários, garantindo a segurança e qualidade dos dados."
+		/>
+		<meta name="robots" content="index, follow" />
+		<meta name="theme-color" content="#115666" />
+
+		<!-- Otimização de performance e preconexão com fontes do Google -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<title>Cadastro de Usuário</title>
+
+		<!-- Otimização de CSS, carregando um arquivo mais compactado para a produção -->
+		<link rel="stylesheet" href="/aula107/assets/css/style.css" />
+
+		<!-- Prevenindo fontes bloqueantes ao carregar e garantindo o uso eficiente do cache -->
+		<style>
+			/* Exemplo para garantir fallback de fonte enquanto o Google Fonts carrega */
+			body {
+				font-family: 'Open Sans', sans-serif;
+			}
+		</style>
+	</head>
+
+	<body>
+		<main class="container">
+			<h1>Formulário de Cadastro</h1>
+			<section class="instrucoes">
+				<h2>Regras de Preenchimento</h2>
+				<ul>
+					<li>Nenhum campo pode estar vazio</li>
+					<li>O nome de usuário deve conter apenas letras e/ou números</li>
+					<li>O nome de usuário deve ter entre 3 e 12 caracteres</li>
+					<li>A senha deve ter entre 6 e 12 caracteres</li>
+				</ul>
+			</section>
+
+			<!-- Formulário de Cadastro -->
+			<form action="/" method="POST" class="formulario" novalidate>
+				<fieldset>
+					<legend>Informações Pessoais</legend>
+
+					<div class="campo">
+						<label for="nome">Nome</label>
+						<input
+							id="nome"
+							type="text"
+							name="nome"
+							class="nome validar"
+							required
+							aria-required="true"
+						/>
+					</div>
+
+					<div class="campo">
+						<label for="sobrenome">Sobrenome</label>
+						<input
+							id="sobrenome"
+							type="text"
+							name="sobrenome"
+							class="sobrenome validar"
+							required
+							aria-required="true"
+						/>
+					</div>
+
+					<div class="campo">
+						<label for="cpf">CPF</label>
+						<input
+							id="cpf"
+							type="text"
+							name="cpf"
+							class="cpf validar"
+							required
+							aria-required="true"
+						/>
+					</div>
+
+					<div class="campo">
+						<label for="usuario">Nome de Usuário</label>
+						<input
+							id="usuario"
+							type="text"
+							name="usuario"
+							class="usuario validar"
+							required
+							aria-required="true"
+						/>
+					</div>
+
+					<div class="campo">
+						<label for="senha">Senha</label>
+						<input
+							id="senha"
+							type="password"
+							name="senha"
+							class="senha validar"
+							required
+							minlength="6"
+							maxlength="12"
+							aria-required="true"
+						/>
+					</div>
+
+					<div class="campo">
+						<label for="repetir-senha">Repetir Senha</label>
+						<input
+							id="repetir-senha"
+							type="password"
+							name="repetir-senha"
+							class="repetir-senha validar"
+							required
+							aria-required="true"
+						/>
+					</div>
+				</fieldset>
+
+				<button type="submit">Enviar</button>
+			</form>
+		</main>
+
+		<!-- Scripts carregados de maneira assíncrona para melhorar o carregamento da página -->
+		<script src="/aula107/assets/js/validaCPF.js"></script>
+		<script src="/aula107/assets/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,168 @@
+:root {
+	/* Cores */
+	--color-primary: #115666;
+	--color-primary-dark: #093038;
+	--color-error: #a71616;
+	--color-background: #ffffff;
+	--color-text: #333333;
+
+	/* Espaçamentos */
+	--spacing-xsm: 0.25rem;
+	--spacing-sm: 0.5rem;
+	--spacing-md: 1rem;
+	--spacing-lg: 1.5rem;
+	--spacing-xl: 2rem;
+
+	/* Tipografia */
+	--font-family-base: 'Open Sans', system-ui, -apple-system, sans-serif;
+	--font-size-base: 1rem;
+	--line-height-base: 1.5;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Acessibilidade */
+:focus-visible {
+	outline: 3px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+html {
+	font-size: 16px;
+	scroll-behavior: smooth;
+}
+
+body {
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	font-family: var(--font-family-base);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	background-color: var(--color-primary);
+	color: var(--color-text);
+	margin: 0; /* Remove margem padrão */
+}
+
+/* Container principal */
+.container {
+	width: 100%;
+	max-width: 40rem; /* 640px */
+	padding: var(--spacing-lg);
+	background: var(--color-background);
+	border-radius: 0.625rem; /* 10px */
+	box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+	margin: var(--spacing-md);
+}
+
+/* Tipografia */
+h1 {
+	font-size: clamp(1.5rem, 5vw, 2rem);
+	font-weight: 700;
+	color: var(--color-primary-dark);
+	margin-bottom: var(--spacing-md);
+	line-height: 1.2;
+}
+
+h2 {
+	font-size: 1.25rem;
+	margin-bottom: var(--spacing-md);
+	padding-left: var(--spacing-xsm);
+	color: var(--color-primary-dark);
+}
+
+.error-text {
+	font-size: 14px;
+	color: var(--color-error);
+}
+
+/* Lista de regras */
+.instrucoes ul {
+	list-style-type: disc;
+	line-height: 1;
+	padding-left: var(--spacing-lg);
+	margin-bottom: var(--spacing-lg);
+}
+
+.instrucoes li {
+	margin-bottom: var(--spacing-sm);
+}
+
+/* Campos do Formulário */
+
+.campo {
+	margin: 0 var(--spacing-md) var(--spacing-md);
+}
+
+.campo label {
+	display: block;
+	margin-bottom: var(--spacing-sm);
+	font-weight: 600;
+}
+
+.campo input {
+	width: 100%;
+	padding: var(--spacing-sm);
+	font-size: var(--font-size-base);
+	line-height: var(--line-height-base);
+	border: 1px solid #ccc;
+	border-radius: 0.25rem;
+	margin-bottom: var(--spacing-sm);
+	background-color: #f9f9f9;
+	transition: border-color 0.2s ease;
+}
+
+/* Foco nos campos de formulário */
+.campo input:focus {
+	border-color: var(--color-primary);
+	outline: none;
+}
+
+/* Botão de envio */
+button {
+	display: block;
+	width: 100%;
+	padding: var(--spacing-md);
+	background: var(--color-primary);
+	color: var(--color-background);
+	font-size: 1.125rem;
+	font-weight: 700;
+	border: none;
+	border-radius: 0.25rem;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+button:hover,
+button:focus {
+	background: var(--color-primary-dark);
+}
+
+/* Responsividade */
+@media (max-width: 40rem) {
+	:root {
+		--spacing-lg: 1rem;
+	}
+
+	.container {
+		margin: var(--spacing-sm);
+		padding: var(--spacing-md);
+	}
+}
+
+/* Preferências de movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
