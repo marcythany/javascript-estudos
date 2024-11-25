@@ -1,0 +1,118 @@
+:root {
+    /* Variáveis de cores com nomes mais descritivos */
+    --color-primary: #115666;
+    --color-primary-dark: #093038;
+    --color-background: #ffffff;
+    --color-text: #333333;
+    
+    /* Variáveis de espaçamento */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+
+    /* Variáveis de fonte */
+    --font-family-base: 'Open Sans', system-ui, -apple-system, sans-serif;
+    --font-size-base: 1rem;
+    --line-height-base: 1.5;
+}
+
+/* Reset moderno */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Melhorias de acessibilidade para outline */
+:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    background-color: var(--color-primary);
+    color: var(--color-text);
+}
+
+/* Container principal */
+.container {
+    width: 100%;
+    max-width: 40rem; /* 640px */
+    padding: var(--spacing-lg);
+    background: var(--color-background);
+    border-radius: 0.625rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    margin: var(--spacing-md);
+}
+
+/* Tipografia */
+h1 {
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+}
+
+p {
+    max-width: 65ch; /* Melhora legibilidade */
+}
+
+/* Botões */
+.button {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-primary);
+    color: var(--color-background);
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-decoration: none;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: var(--spacing-xl);
+}
+
+.button:hover,
+.button:focus {
+    background: var(--color-primary-dark);
+}
+
+/* Media Queries */
+@media (max-width: 40rem) {
+    :root {
+        --spacing-lg: 1rem;
+    }
+
+    .container {
+        margin: var(--spacing-sm);
+        padding: var(--spacing-md);
+    }
+}
+
+/* Utilitários para animações suaves */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
